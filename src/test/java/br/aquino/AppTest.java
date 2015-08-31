@@ -1,38 +1,29 @@
 package br.aquino;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.json.JSONObject;
+import org.junit.Assert;
+import org.junit.Test;
 
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-    extends TestCase
+public class AppTest
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
-
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
+	
+	public static String json = "{ \"commands\" : \"5 5 \\n 1 2 N  \\n LMLMLMLMM \\n 3 3 E \\n MMRMMRMRRM\" }";
+	
+//	@Test
+//    public void testMain()
+//    {
+//		String result = App.getSondaResult(json);
+//		Assert.assertEquals("(1, 3) N  (5, 1) E", result);
+//		System.out.println(result);
+//    }
+	
+	@Test
     public void testApp()
     {
-        assertTrue( true );
+    	ReadCommands read = new ReadCommands();
+    	Assert.assertEquals("[{\"result\":\"(1, 3) N\"},{\"result\":\"(5, 1) E\"}]", read.readCommands(new JSONObject(json)).toString());
     }
 }
