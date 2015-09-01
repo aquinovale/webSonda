@@ -32,8 +32,13 @@ public class ReadCommands {
 			// or odd execute the movements
 			if((position % 2 != 0)){
 				String[] chr = value.split("\\s");
+				//Get a value by position
+				// position 1 - x
+				// position 2 - y
+				// position 3 - RosaVentos
 				this.sondas.add(new Posicao(new Cartesiano(Integer.parseInt(chr[0]), Integer.parseInt(chr[1])), RosaVentos.valueOf(chr[2])));
 			}else{
+				// Get a last sonda and do the movements
 				Posicao sonda = sondas.get(sondas.size()-1);
 				char[] letras = value.toCharArray();
 				for (int i = 0; i < letras.length; i++) {
