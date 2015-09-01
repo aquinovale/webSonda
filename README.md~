@@ -23,8 +23,6 @@ After wildfly was initialized, execute the maven.
 '''mvn clean compile package wildfly:deploy-only'''
 
 
-Can you to use a curl to visualize result.
-'''curl -H "Content-Type:application/json" -i -X POST -d '{"commands": "5 5 \n 1 2 N \n LMLMLMLMM \n 3 3 E \n MMRMMRMRRM"}' http://localhost:8080/Sonda/api/rest'''' 
-
+Can you to use a 'curl -H "Content-Type:application/json" -i -X POST -d '{"commands": "5 5 \n 1 2 N \n LMLMLMLMM \n 2 2 S \n MMMLMRMM"}' http://localhost:8080/Sonda/api/rest' to visualize result.
 Use \n to do a breakline.
 
